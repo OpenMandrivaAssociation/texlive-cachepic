@@ -1,3 +1,9 @@
+# revision 18835
+# category Package
+# catalog-ctan /macros/latex/contrib/cachepic
+# catalog-date 2009-11-09 14:16:05 +0100
+# catalog-license lppl1.3
+# catalog-version 1.0
 Name:		texlive-cachepic
 Version:	1.0
 Release:	1
@@ -47,6 +53,7 @@ generates the external graphics.
 %doc %{_texmfdistdir}/doc/latex/cachepic/README
 %doc %{_texmfdistdir}/doc/latex/cachepic/cachepic.pdf
 %doc %{_texmfdistdir}/doc/latex/cachepic/cachepic.tex
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -61,3 +68,5 @@ pushd %{buildroot}%{_bindir}
 popd
 mkdir -p %{buildroot}%{_datadir}
 cp -fpar texmf-dist %{buildroot}%{_datadir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
