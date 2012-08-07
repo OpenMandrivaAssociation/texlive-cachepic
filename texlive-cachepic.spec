@@ -1,12 +1,12 @@
-# revision 18835
+# revision 26313
 # category Package
 # catalog-ctan /macros/latex/contrib/cachepic
-# catalog-date 2009-11-09 14:16:05 +0100
+# catalog-date 2012-04-29 18:30:38 +0200
 # catalog-license lppl1.3
 # catalog-version 1.0
 Name:		texlive-cachepic
 Version:	1.0
-Release:	2
+Release:	3
 Summary:	Convert document fragments into graphics
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/cachepic
