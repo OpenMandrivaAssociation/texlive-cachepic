@@ -6,7 +6,7 @@
 # catalog-version 1.0
 Name:		texlive-cachepic
 Version:	1.0
-Release:	5
+Release:	6
 Summary:	Convert document fragments into graphics
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/cachepic
