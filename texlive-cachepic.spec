@@ -1,6 +1,6 @@
 Name:		texlive-cachepic
 Version:	26313
-Release:	1
+Release:	2
 Summary:	Convert document fragments into graphics
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/cachepic
