@@ -3,7 +3,7 @@ Version:	26313
 Release:	2
 Summary:	Convert document fragments into graphics
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/cachepic
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/cachepic
 License:	LPPL1.3
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/cachepic.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/cachepic.doc.r%{version}.tar.xz
