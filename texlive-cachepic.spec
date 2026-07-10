@@ -1,54 +1,26 @@
-Name:		texlive-cachepic
-Version:	26313
-Release:	2
+%global tl_name cachepic
+%global tl_revision 78415
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	1.0
+Release:	%{tl_revision}.1
 Summary:	Convert document fragments into graphics
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/cachepic
-License:	LPPL1.3
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/cachepic.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/cachepic.doc.r%{version}.tar.xz
+License:	lppl1.3
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/cachepic.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/cachepic.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
-Provides:	texlive-cachepic.bin = %{EVRD}
+%texlive_base_requires
+Requires:	texlive(cachepic.bin)
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-The bundle simplifies and automates conversion of document
-fragments into external EPS or PDF files. The bundle consists
-of two parts: a LaTeX package that implements a document level
-interface, and a command line tool (written in lua) that
-generates the external graphics.
+The bundle simplifies and automates conversion of document fragments
+into external EPS or PDF files. The bundle consists of two parts: a
+LaTeX package that implements a document level interface, and a command
+line tool (written in Lua) that generates the external graphics.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_bindir}/cachepic
-%{_texmfdistdir}/scripts/cachepic/cachepic.cmd
-%{_texmfdistdir}/scripts/cachepic/cachepic.tlu
-%{_texmfdistdir}/tex/latex/cachepic/cachepic.sty
-%{_texmfdistdir}/tex/latex/cachepic/prcachepic.def
-%doc %{_texmfdistdir}/doc/latex/cachepic/README
-%doc %{_texmfdistdir}/doc/latex/cachepic/cachepic.pdf
-%doc %{_texmfdistdir}/doc/latex/cachepic/cachepic.tex
-
-#-----------------------------------------------------------------------
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_bindir}
-pushd %{buildroot}%{_bindir}
-ln -sf %{_texmfdistdir}/scripts/cachepic/cachepic.tlu cachepic
-popd
-mkdir -p %{buildroot}%{_datadir}
-cp -fpar texmf-dist %{buildroot}%{_datadir}
